@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                def customImage = docker.build("my-nginx:${env.BUILD_ID}")
+                sh docker build -t mynginx::${env.BUILD_ID} .
             }
         }
         stage('Test') {
