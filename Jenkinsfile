@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh "groups"
-                sh "docker build -t mynginx:${env.BUILD_ID} ."
+                sh "sudo docker build -t mynginx:${env.BUILD_ID} ."
             }
         }
         stage('Test') {
