@@ -5,6 +5,7 @@ pipeline {
         stage('Unit test') {
             steps {
                 echo 'Unit testing'
+                sh "whoami"
             }
         }
         stage('Build') {
