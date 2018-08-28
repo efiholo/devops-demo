@@ -2,9 +2,14 @@ pipeline {
     agent any
 
     stages {
+        stage('Unit test') {
+            steps {
+                echo 'Unit testing'
+            }
+        }
         stage('Build') {
             steps {
-                sh 'docker build'
+                sh 'docker build -t mynxing . '
             }
         }
         stage('Test') {
