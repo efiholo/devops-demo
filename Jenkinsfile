@@ -2,6 +2,9 @@ pipeline {
     agent any
 
     stages {
+        stage checkout {
+            checkout scm
+        }
         stage('Unit test') {
             steps {
                 echo 'Unit testing'
@@ -9,7 +12,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker build -t mynxing . '
+                def customImage = docker.build("my-nginx:${env.BUILD_ID}")
             }
         }
         stage('Test') {
