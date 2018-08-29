@@ -5,11 +5,13 @@ pipeline {
         stage('Unit test') {
             steps {
                 echo 'Unit testing'
+                sh "whoami"
             }
         }
         stage('Build') {
             steps {
-                sh "docker build -t mynginx:${env.BUILD_ID} ."
+                sh "groups"
+                sh "sudo docker build -t mynginx:${env.BUILD_ID} ."
             }
         }
         stage('Test') {
