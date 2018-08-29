@@ -17,7 +17,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing Staging ..'
-                sh fail
+                sh "fail"
             }
         }
         stage('Deploy') {
