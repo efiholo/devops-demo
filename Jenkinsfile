@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh "groups"
                 sh "sudo docker build -t mynginx:${env.BUILD_ID} ."
-                sh "Hello again"
+                echo "Hello again"
             }
         }
         stage('Test') {
